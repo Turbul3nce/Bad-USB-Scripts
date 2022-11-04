@@ -3,6 +3,7 @@ REM Machine needs to be unlocked
 REM User needs administrator privs
 REM Stealth Method
 REM Refer to readme for attack machine setup
+REM Dont forget to change payload and IP/PORT
 
 REM Payload Start 
 DELAY 3000
