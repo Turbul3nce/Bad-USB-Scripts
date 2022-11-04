@@ -1,6 +1,6 @@
 # Various Ducky scripts for Bad USBs
 ### Can be used for pentesting or administrative tasks.
-### Below text is applies to the stealth reverse shell.
+### Below text applies to the stealth reverse shell.
 ### Requires Admin privileges to disable Defender. Otherwide payload may be detected.
 ### Tested on Windows 11 Home 
 # On The Attacker's Machine
