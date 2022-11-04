@@ -1,7 +1,8 @@
-REM Short script for reverse shell on Windows 11 Machine
+REM Script for reverse shell on Windows 11 Machine
 REM Machine needs to be unlocked 
 REM User needs administrator privs
 REM Stealth Method
+REM Refer to readme for attack machine setup
 
 REM Payload Start 
 DELAY 3000
