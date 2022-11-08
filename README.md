@@ -1,7 +1,11 @@
 # Various Ducky scripts for Bad USBs
-### Can be used for pentesting or administrative tasks. 
-# On The Attacker's Machine
-### Below text applies to the stealth reverse shell.
+#### **Can be used for pentesting or administrative tasks.** 
+#### **For educational puposes only!**
+
+###Steps to Compromise(StealthReverseShell):
+#### **Below text applies to the stealth reverse shell.**
+
+
 ### Requires Admin privileges to disable Defender. Otherwise, the payload may be detected.
 ### Tested on Windows 11 Home
 ### Create the payload with msfvenom<br/> 
