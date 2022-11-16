@@ -1,7 +1,8 @@
-REM Script for reverse shell on Windows 11 Machine
-REM Machine needs to be unlocked 
+REM Author: RoseHacks
+REM Script for reverse shell on Windows 11 Machine 
+
+REM Notes:
 REM User needs administrator privs
-REM Stealth Method
 REM Refer to readme for attack machine setup
 REM Dont forget to change payload and IP/PORT
 REM Ensure Caps Lock is off
