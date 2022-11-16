@@ -1,4 +1,4 @@
-REM Author: RoseHacks
+REM Author: RosePwns
 REM Script for reverse shell on Windows 11 Machine 
 
 REM Notes:
