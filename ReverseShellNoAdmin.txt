@@ -1,7 +1,10 @@
+REM Author: RosePwns
+
+REM Notes:
 REM Short script for reverse shell on Windows 11 Machine
 REM Machine needs to be unlocked 
 REM User does not need Admin Privs
-REM Need Powercat on attack machine
+REM Makes use of Powercat on attack machine
 REM Leaves an open window
 
 REM Payload Start 
