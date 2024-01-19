@@ -1,6 +1,4 @@
 # **Various Ducky scripts for Bad USBs**
-#### **Can be used for pentesting or administrative tasks.** 
-#### **For educational puposes only!**
 #### **Tested and working on WIndows 11**
 
 ## **Steps to Compromise(StealthReverseShell.txt):** <br>
