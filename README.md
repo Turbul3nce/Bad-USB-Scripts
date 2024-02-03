@@ -1,5 +1,4 @@
 # **Various Ducky scripts for Bad USBs**
-#### **Tested and working on WIndows 11**
 
 ## **Steps to Compromise(StealthReverseShell.txt):** <br>
 #### **Requires Admin privileges to disable Defender. Otherwise, the payload may be detected.**
